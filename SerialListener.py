@@ -20,9 +20,16 @@ def main():
 				print (a[0], sep = ", ", end="")
 	except serial.serialutil.SerialException:
 		print ("Default address not working")
+		try:
+			ser = serial.Serial(location+sys.argv[0], 9600)
+			while True:
+				a = ser.readline()
+				if not a == "\n":
+					print (a[0], sep = ", ", end="")
+		except serial.serialutil.SerialException:
+			print ("argument given still not working")
 
-		
 
 if __name__ == '__main__':
-	
+
 	main()
