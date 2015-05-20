@@ -21,13 +21,16 @@ def main():
 	except serial.serialutil.SerialException:
 		print ("Default address not working")
 		try:
-			ser = serial.Serial(location+sys.argv[0], 9600)
+			ser = serial.Serial(location+sys.argv[len(sys.argv) - 1], 9600)
 			while True:
 				a = ser.readline()
 				if not a == "\n":
 					print (a[0], sep = ", ", end="")
 		except serial.serialutil.SerialException:
-			print ("argument given still not working")
+			print ("argument given still not working (try ttyACM0 or COM13)")
+		except ValueError:
+			print ("cant config port, some setting was wrong, yada yada,")
+			print (" windows is probably saying some parameter is wrong")
 
 
 if __name__ == '__main__':
