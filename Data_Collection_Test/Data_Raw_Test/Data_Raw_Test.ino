@@ -1,3 +1,11 @@
+/* Changelog:
+
+Added extra gyro offset statements
+Modified output to only include gyro raw data, one per line
+
+*/
+
+
 // I2C device class (I2Cdev) demonstration Arduino sketch for MPU6050 class
 // 10/7/2011 by Jeff Rowberg <jeff@rowberg.net>
 // Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
@@ -129,12 +137,14 @@ void loop() {
 
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
-        Serial.print("a/g:\t");
-        Serial.print(ax); Serial.print("\t");
-        Serial.print(ay); Serial.print("\t");
-        Serial.print(az); Serial.print("\t");
-        Serial.print(gx); Serial.print("\t");
-        Serial.print(gy); Serial.print("\t");
+        //Serial.print("a/g:\t");
+        //Serial.print(ax); Serial.print("\t");
+        //Serial.print(ay); Serial.print("\t");
+        //Serial.print(az); Serial.print("\t");
+        Serial.println(gx); 
+        //Serial.print("\t");
+        Serial.println(gy); 
+        //Serial.print("\t");
         Serial.println(gz);
     #endif
 
