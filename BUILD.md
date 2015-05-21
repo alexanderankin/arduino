@@ -20,8 +20,8 @@ avr-g++\
 	-DF_CPU // set frequency
 	-MMD // something about logging header files
 	-DUSB_PID -DUSB_VID // set up voltages
-	-DARDUINO
-	-D__PROG_TYPES_COMPAT__ // macros
+	-DARDUINO // macro for setting ide version
+	-D__PROG_TYPES_COMPAT__ // macro for setting Programmer version (?)
 	-I // includes
 		/usr/share/arduino/hardware/arduino/cores/arduino
 		/usr/share/arduino/hardware/arduino/variants/mega
